@@ -34,7 +34,7 @@ export default function Login() {
               </button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1>Hello, User!</h1>
+              <h1>POSify</h1>
               <p>Enter your personal details and start journey with POSify</p>
               <button
                 className="ghost "

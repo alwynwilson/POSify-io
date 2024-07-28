@@ -1,4 +1,4 @@
-import "./profile.scss";
+import "./profile.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 
@@ -8,40 +8,19 @@ const Profile = () => {
       <Sidebar />
       <div className="newContainer">
         <Navbar />
-        <div className="top">
-          <div className="left">
-            <div className="editButton">Edit</div>
-            <h1 className="title">Information</h1>
-            <div className="item">
-              <img
-                src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                alt=""
-                className="itemImg"
-              />
-              <div className="details">
-                <h1 className="itemTitle">Jane Doe</h1>
-                <div className="detailItem">
-                  <span className="itemKey">Email:</span>
-                  <span className="itemValue">janedoe@gmail.com</span>
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Phone:</span>
-                  <span className="itemValue">+1 2345 67 89</span>
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Address:</span>
-                  <span className="itemValue">
-                    Elton St. 234 Garden Yd. New York
-                  </span>
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Country:</span>
-                  <span className="itemValue">USA</span>
-                </div>
-              </div>
+        <div className="listContainer">
+          <div className="listTitle"><h1 className="fw-bolder">Profile</h1></div>
+          <div className="profileContainer row">
+            <div className="col-lg-6 profileImage">
+              <img src="https://www.taxmann.com/post/wp-content/uploads/2021/04/company-concept-illustration_114360-2581.jpg" alt="Company Logo" />
+            </div>
+            <div className="col-lg-6 profileDetails">
+              <p className="mb-5">Company Name: ABC Corp</p>
+              <p className="mb-5">Email: contact@abccorp.com</p>
+              <p className="mb-5">Username: john_doe</p>
+              <p className="mb-5">Assigned Role: Admin</p>
             </div>
           </div>
-          <div className="right"></div>
         </div>
       </div>
     </div>

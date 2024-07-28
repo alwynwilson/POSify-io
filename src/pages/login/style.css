@@ -29,6 +29,7 @@
     margin: 20px 0 30px;
   }
   
+
   span {
     font-size: 12px;
   }
@@ -208,21 +209,32 @@
     transform: translateX(20%);
   }
   
+  .head-create{
+    margin-bottom: 30px;
+  }
+
   .social-container {
     margin: 20px 0;
   }
   
   .social-container a {
     border: 1px solid #dddddd;
-    border-radius: 50%;
+    border-radius: 20px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     margin: 0 5px;
     height: 40px;
-    width: 40px;
+    width: 200px;
   }
   
+  .signup{
+    margin-top: 30px;
+  }
+  .signin{
+    margin-bottom: 25px;
+  }
+
   footer {
     background-color: #222;
     color: #fff;
@@ -239,9 +251,9 @@
     margin: 10px 0;
   }
   
-  footer i {
+  /* footer i {
     color: red;
-  }
+  } */
   
   footer a {
     color: #3c97bf;

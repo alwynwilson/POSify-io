@@ -1,0 +1,63 @@
+.new {
+  width: 100%;
+  display: flex;
+}
+
+.new .newContainer {
+  flex: 6;
+}
+
+.new .newContainer .listContainer {
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 20px;
+  margin: 20px;
+}
+
+.new .newContainer .listContainer .listTitle {
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  margin-bottom: 15px;
+}
+
+.new .newContainer .listContainer .settingsSections {
+  margin-top: 15px;
+}
+
+.new .newContainer .listContainer .settingsSections .settingsSection {
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.new .newContainer .listContainer .settingsSections .settingsSection h2 {
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  color: blue;
+}
+
+.new .newContainer .listContainer .settingsSections .settingsSection form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new .newContainer .listContainer .settingsSections .settingsSection form .formGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.new .newContainer .listContainer .settingsSections .settingsSection form .formGroup label {
+  width: 150px;
+  font-weight: bold;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.new .newContainer .listContainer .settingsSections .settingsSection form .formGroup input,
+.new .newContainer .listContainer .settingsSections .settingsSection form .formGroup select {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  text-align: left;
+}

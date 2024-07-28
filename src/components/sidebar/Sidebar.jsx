@@ -1,10 +1,9 @@
-import "./sidebar.scss";
+import "./sidebar.css";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import StoreIcon from "@mui/icons-material/Store";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
 
 
@@ -27,7 +26,7 @@ const Sidebar = () => {
             </li>
           </Link>
           <p className="title">LISTS</p>
-          <Link to="/sale" style={{ textDecoration: "none" }}>
+          <Link to="/listsale" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>Sale</span>
@@ -52,10 +51,10 @@ const Sidebar = () => {
               <span>Profile</span>
             </li>
           </Link>
-          <Link to="/logout" style={{ textDecoration: "none" }}>
+          <Link to="/adsettings" style={{ textDecoration: "none" }}>
           <li>
-            <ExitToAppIcon className="icon" />
-            <span>Logout</span>
+            <SettingsOutlinedIcon className="icon" />
+            <span>Settings</span>
           </li>
           </Link>
           

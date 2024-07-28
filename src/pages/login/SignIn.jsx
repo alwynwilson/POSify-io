@@ -1,65 +1,75 @@
-import React from "react";
-import { Link } from "react-router-dom";
-Link
+import React,{ useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { loginAPI } from '../../Services/allAPI';
+
 function SignInForm() {
-  const [state, setState] = React.useState({
+  const [userData, setUserData] = useState({
     email: "",
     password: ""
   });
-  const handleChange = evt => {
-    const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value
-    });
-  };
 
-  const handleOnSubmit = evt => {
-    evt.preventDefault();
+  const navigate = useNavigate()
 
-    const { email, password } = state;
-    alert(`You are login with email: ${email} and password: ${password}`);
-
-    for (const key in state) {
-      setState({
-        ...state,
-        [key]: ""
-      });
+  const handleLogin = async (e)=>{
+    e.preventDefault()
+    if(userData.email && userData.password){
+      //api call
+      try{
+        const result = await loginAPI(userData)
+        console.log(result);
+        if(result.status==200){
+          //setIsLoggedin(true)
+          sessionStorage.setItem("user",JSON.stringify(result.data.user))
+          sessionStorage.setItem("token",result.data.token)
+          //setIsAuthorised(true)
+          toast.info(`Welcome ${result.data.user.username}..`)
+          
+          setTimeout(()=>{
+            setUserData({
+              username:"",email:"",password:""
+            })
+            //setIsLoggedin(false)
+            navigate('/dashboard')},1500)
+        }else{
+          if(result.response.status==404){
+            toast.error(result.response.data)
+          }
+        }
+      }catch(err){
+        console.log(err);
+      }
+    }else{
+      toast.info("Please fill the form completely")
     }
-  };
+  }
 
   return (
     <div className="form-container sign-in-container">
-      <form onSubmit={handleOnSubmit}>
-        <h1>Sign in</h1>
-        <div className="social-container">
-          
-          <a href="#" className="social">
-            <i className="fab fa-google-plus-g" />
-          </a>
-          
-        </div>
-        <span>or use your account</span>
+      <form>
+        <h1 className="signin">Sign in</h1>
         <input
           type="email"
           placeholder="Email"
           name="email"
-          value={state.email}
-          onChange={handleChange}
+          value={userData.email}
+          onChange={e=>setUserData({...userData,email:e.target.value})}
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
-          value={state.password}
-          onChange={handleChange}
+          value={userData.password}
+          onChange={e=>setUserData({...userData,password:e.target.value})}
         />
-        <a href="#">Forgot your password?</a>
-        <Link to="/dashboard" style={{ textDecoration: "none" }}>
-          <button >Sign In</button>
-        </Link>
+
+          <button onClick={handleLogin}>Sign In</button>
+
         
       </form>
+      <ToastContainer position='top-center' theme='colored' autoclose={3000} />
+
     </div>
   );
 }

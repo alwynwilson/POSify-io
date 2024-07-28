@@ -1,0 +1,22 @@
+.new {
+  width: 100%;
+  display: flex;
+}
+
+.new .newContainer {
+  flex: 6;
+}
+
+.new .newContainer .listContainer {
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 20px;
+  margin: 20px;
+}
+
+.new .newContainer .listContainer .listTitles {
+  font-weight: bold;
+  color: rgb(101, 101, 101);
+  margin-bottom: 15px;
+  font-size: 30px;
+}

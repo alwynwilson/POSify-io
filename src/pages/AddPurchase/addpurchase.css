@@ -1,0 +1,112 @@
+.list {
+  display: flex;
+  width: 100%;
+}
+
+.list .listContainer {
+  flex: 6;
+}
+
+.list-Container {
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 20px;
+  margin: 20px;
+  height: 90vh;
+}
+
+.list-Container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.list-Container .header h1 {
+  font-weight: bold;
+}
+
+.list-Container .billingDetails {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.list-Container .billingDetails .billingColumn {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+}
+
+.list-Container .billingDetails .billingColumn input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.list-Container .itemsList {
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.list-Container .itemsList .itemsHeaders,
+.list-Container .itemsList .itemsRows {
+  display: flex;
+  padding: 0;
+  min-width: 1200px;
+}
+
+.list-Container .itemsList .itemsHeaders input,
+.list-Container .itemsList .itemsRows input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 180px;
+  height: 20px;
+}
+
+.list-Container .itemsList .itemsHeaders .plist,
+.list-Container .itemsList .itemsRows .plist {
+  width: 245px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.list-Container .itemsList .itemsHeaders .itemsHeader {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.list-Container .totalAmount {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.list-Container .totalAmount div {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.list-Container .totalAmount div:first-child {
+  flex: 5.5;
+}
+
+.list-Container .totalAmount div:last-child {
+  flex: 1;
+  font-weight: bold;
+}
+
+.list-Container .saveButton {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  float: right;
+  width: 100px;
+}
