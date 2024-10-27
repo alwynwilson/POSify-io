@@ -1,10 +1,14 @@
+/* Main layout */
 .list {
   display: flex;
   width: 100%;
+  justify-content: center; /* Centers content for all screen sizes */
+  padding: 0 0px;
 }
 
 .list .listContainer {
   flex: 6;
+  width: 100%; /* Full width for smaller screens */
 }
 
 .list-Container {
@@ -12,9 +16,10 @@
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
   padding: 20px;
   margin: 20px;
-  height: 90vh;
+  height: auto; /* Adjusts height based on content */
 }
 
+/* Header */
 .list-Container .header {
   display: flex;
   justify-content: space-between;
@@ -26,10 +31,12 @@
   font-weight: bold;
 }
 
+/* Billing details */
 .list-Container .billingDetails {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .list-Container .billingDetails .billingColumn {
@@ -43,8 +50,10 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%; /* Adjust input width for responsiveness */
 }
 
+/* Item list */
 .list-Container .itemsList {
   margin-bottom: 20px;
   overflow-x: auto;
@@ -54,7 +63,7 @@
 .list-Container .itemsList .itemsRow {
   display: flex;
   padding: 0;
-  min-width: 1000px; /* Adjust as needed to fit 10 columns */
+  min-width: 1000px; /* Maintain table structure */
 }
 
 .list-Container .itemsList .itemsHeader input,
@@ -79,6 +88,7 @@
   background-color: #f0f0f0;
 }
 
+/* Total Amount */
 .list-Container .totalAmount {
   display: flex;
   justify-content: flex-end;
@@ -100,6 +110,7 @@
   font-weight: bold;
 }
 
+/* Save Button */
 .list-Container .saveButton {
   background-color: blue;
   color: white;
@@ -111,37 +122,69 @@
   width: 100px;
 }
 
-
-.detail{
-  margin-left: -950px;
-  margin-top: 20px;
-  height: 200px;
+/* Details Section */
+.detail {
+  margin: 20px 0;
+  height: auto;
   display: flex;
-  padding-left: 0;
   justify-content: left;
+  flex-wrap: wrap; /* Makes it responsive */
 }
 
-form.detail{
-  height: 300px;
+form.detail {
+  height: auto;
 }
 
-.form-table{
+.form-table {
   margin-left: 0px;
-  padding-left: 0;
   text-align: left;
-  height: 300px;
+  height: auto;
 }
 
-.details{
+.details {
   display: flex;
   margin-bottom: 15px;
-  padding-left: 0;
-  margin-left: 0px;
-
-
+  flex-wrap: wrap;
 }
 
-.addproduct{
+.addproduct {
   margin-top: 30px;
-  margin-left: -270px;
+  margin-left: 0; /* Responsive margin */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .list-Container .billingDetails .billingColumn {
+    width: 100%; /* Full width for small screens */
+    margin-bottom: 15px;
+  }
+
+  .list-Container .itemsList .itemsHeader div,
+  .list-Container .itemsList .itemsRow div {
+    width: 120px; /* Reduce width for smaller screens */
+  }
+
+  .list-Container .saveButton {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .list-Container {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .list-Container .itemsList .itemsHeader div,
+  .list-Container .itemsList .itemsRow div {
+    width: 90px; /* Narrower on mobile */
+  }
+
+  .list-Container .totalAmount div:first-child {
+    flex: 1;
+  }
+
+  .list-Container .totalAmount div:last-child {
+    flex: 1;
+  }
 }

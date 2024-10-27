@@ -24,6 +24,10 @@ const AddProduct = () => {
                     <input style={{padding:'10px',margin:'0px'}} type="text" name="productid" placeholder="Enter product ID" required />
                   </div>
                   <div className="formGroup details">
+                    <label style={{width:'185px',padding:'10px',marginLeft:'0px',textAlign:"left"}}>Product Image:</label>
+                    <input style={{padding:'10px',margin:'0px',width:'290px'}} type="file" name="productimg"  required />
+                  </div>
+                  <div className="formGroup details">
                     <label style={{width:'300px',padding:'10px',margin:'0px',textAlign:"left"}}>Product Name:</label>
                     <input style={{padding:'10px',margin:'0px'}} type="text" name="productname" placeholder="Enter Product Name" required />
                   </div>

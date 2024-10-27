@@ -32,7 +32,7 @@ const ListProduct = () => {
       }
       try{
         const result = await allProductsAPI(searchKey,reqHeader);
-        console.log(result);
+        console.log(searchKey);
         if(result.status==200){
           setAllProducts(result.data)
         }
@@ -64,6 +64,7 @@ const ListProduct = () => {
               <TableHead>
                 <TableRow>
                   <TableCell className="tableCell">Product ID</TableCell>
+                  <TableCell className="tableCell">Product Image</TableCell>
                   <TableCell className="tableCell">Product Name</TableCell>
                   <TableCell className="tableCell">Max Retail Price</TableCell>
                   <TableCell className="tableCell">Cost</TableCell>
@@ -75,14 +76,15 @@ const ListProduct = () => {
                 {allProducts.map((row) => (
                   <TableRow key={row.id}>
                     <TableCell className="tableCell">{row.id}</TableCell>
+                    <TableCell className="tableCell"><img className="cellWrapper rounded" style={{width:'40px', height:'40px'}} src={row.image}/></TableCell>
                     <TableCell className="tableCell"><div className="cellWrapper">{row.productName}</div></TableCell>
-                    <TableCell className="tableCell">{row.maxPrice}</TableCell>
+                    <TableCell className="tableCell">{row.maxRetailPrice}</TableCell>
                     <TableCell className="tableCell">{row.cost}</TableCell>
                     <TableCell className="tableCell">{row.quantity}</TableCell>
                     <TableCell className="tableCell">
                       <div className="d-flex">
-                        <button className="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button className="delete"><i class="fa-solid fa-trash"></i></button>
+                        <button className="edit"><i className="fa-solid fa-pen-to-square"></i></button>
+                        <button className="delete"><i className="fa-solid fa-trash"></i></button>
                       </div>
                     </TableCell>
                   </TableRow>
